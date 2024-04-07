@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model feedback {
+model Feedback {
   id                    Int       @id @default(autoincrement())
   user_name             String    @db.VarChar(255)
   viewed_temperature    Decimal   @db.Decimal(5, 2)
