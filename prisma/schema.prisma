@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model feedback {
+  id                    Int       @id @default(autoincrement())
+  user_name             String    @db.VarChar(255)
+  viewed_temperature    Decimal   @db.Decimal(5, 2)
+  perceived_temperature Decimal   @db.Decimal(5, 2)
+  rate                  Int
+  description           String?   @db.Text
+  created_at            DateTime? @default(now()) @db.Timestamp(0)
+  updated_at            DateTime? @default(now()) @db.Timestamp(0)
+}
