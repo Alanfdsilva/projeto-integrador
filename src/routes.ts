@@ -9,5 +9,9 @@ routes.get('/uptime', (req, res) => {
 });
 
 routes.post('/feedback', FeedbackController.registerFeedback);
+
+routes.get('/feedback/:city', FeedbackController.listFeedbacksByCity);
+
+routes.get('/feedback/location/:lon/:lat', FeedbackController.listFeedbacksByLonLat);
   
 export default routes;

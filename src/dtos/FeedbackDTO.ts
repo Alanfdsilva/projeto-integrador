@@ -8,5 +8,8 @@ export type Feedback = {
     rate: number,
     description?: string | null,
     created_at?: Date,
-    updated_at?: Date
+    updated_at?: Date,
+    city: string,
+    lon: string,
+    lat: string
 }
